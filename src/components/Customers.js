@@ -2,37 +2,10 @@ import React, { Component } from 'react';
 import CustomerCard from "./CustomerCard"
 
 class Customers  extends Component {
-  data = require('../resources/preSortedMockData.json');
+  data = require('../resources/unFormattedMockData.json');
   single_point_threshold = 50;
   double_point_threshold = 100;
   double_point_multiplier = 2;
-  // preSortedMockData =
-  //   [
-  //     {
-  //     "name": "joe",
-  //     "orderHistory": [
-  //       {"date":  "06/01/2022", "price": 19.55},
-  //       {"date":  "06/10/2022", "price": 29.55},
-  //       {"date":  "07/03/2022", "price": 55.55},
-  //       {"date":  "07/17/2022", "price": 99.55},
-  //       {"date":  "07/22/2022", "price": 201.55},
-  //       {"date":  "07/29/2022", "price": 38.55},
-  //       {"date":  "08/05/2022", "price": 83.55}
-  //       ]
-  //     },
-  //     {
-  //       "name": "carlos",
-  //       "orderHistory": [
-  //         {"date": "2022-06-01", "price": 19.55},
-  //         {"date": "2022-06-10", "price": 29.55},
-  //         {"date": "2022-07-03", "price": 55.55},
-  //         {"date": "2022-07-17", "price": 99.55},
-  //         {"date": "2022-07-22", "price": 201.55},
-  //         {"date": "2022-07-29", "price": 38.55},
-  //         {"date": "2022-08-05", "price": 83.55}
-  //       ]
-  //     }
-  //   ]
   formattedCustomers = []
 
   constructor(props) {
