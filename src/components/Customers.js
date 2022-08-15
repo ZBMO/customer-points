@@ -36,15 +36,13 @@ class Customers  extends Component {
 
       customer.orderHistory.forEach(order => {
         customerTotal += order.price;
-        totalPoints += this.getTotalPoints(order.price);
 
         let orderDate = new Date(order.date);
-        let orderMonth = orderDate.toLocaleString(
-          'default', {month: 'long'});
+        let orderMonth = orderDate.toLocaleString('default', {month: 'long'});
 
         if (Object.keys(threeMonthRewards).includes(orderMonth)) {
           threeMonthRewards[orderMonth].spent += order.price;
-          threeMonthRewards[orderMonth].points = this.getTotalPoints(threeMonthRewards[orderMonth].spent)
+          threeMonthRewards[orderMonth].points += this.getTotalPoints(order.price)
         }
         else {
           threeMonthRewards[orderMonth] = {
@@ -53,6 +51,12 @@ class Customers  extends Component {
           }
         }
       })
+
+      for (const key in threeMonthRewards) {
+        totalPoints += threeMonthRewards[key].points;
+      }
+
+
 
       return {
         "name": customer.name,
