@@ -1,0 +1,29 @@
+{
+  "customers": [
+    {"name": "joe",
+      "totalSpent": 500,
+      "totalPoints": 100,
+      "threeMonthRewards": [
+        {"month":  "June", "spent": 19.55, "points": 55},
+        {"month":  "July", "spent": 100, "points": 100},
+        {"month":  "August", "spent": 200, "points": 3}
+      ]
+    },
+    {"name": "lisa",
+      "totalSpent": 500,
+      "totalPoints": 100,
+      "threeMonthRewards": [
+        {"month":  "June", "spent": 19.55, "points": 55},
+        {"month":  "July", "spent": 100, "points": 100},
+        {"month":  "August", "spent": 200, "points": 3}
+      ]},
+    {"name": "carlos",
+      "totalSpent": 500,
+      "totalPoints": 100,
+      "threeMonthRewards": [
+        {"month":  "June", "spent": 19.55, "points": 55},
+        {"month":  "July", "spent": 100, "points": 100},
+        {"month":  "August", "spent": 200, "points": 3}
+      ]}]
+}
+
