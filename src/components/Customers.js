@@ -2,18 +2,11 @@ import React, { Component } from 'react';
 import CustomerCard from "./CustomerCard"
 
 class Customers  extends Component {
-  data = require('../resources/unFormattedMockData.json');
+
   single_point_threshold = 50;
   double_point_threshold = 100;
   double_point_multiplier = 2;
   formattedCustomers = []
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      rawCustomers: this.data.customers,
-    }
-  }
 
   getTotalPoints = (moneySpent) => {
     let points = 0
@@ -27,8 +20,8 @@ class Customers  extends Component {
     return Math.round(points)
   }
 
-  reformatCustomerData = () => {
-    this.formattedCustomers = this.state.rawCustomers.map(customer => {
+  reformatCustomerData = (customers) => {
+    this.formattedCustomers = customers.map(customer => {
 
       let customerTotal = 0;
       let totalPoints = 0;
@@ -56,8 +49,6 @@ class Customers  extends Component {
         totalPoints += threeMonthRewards[key].points;
       }
 
-
-
       return {
         "name": customer.name,
         "totalSpent": customerTotal,
@@ -67,7 +58,8 @@ class Customers  extends Component {
   }
 
   render () {
-    this.reformatCustomerData();
+    const { customers } = this.props
+    this.reformatCustomerData(customers);
 
     return(
       <div className="customers">
